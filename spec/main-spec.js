@@ -28,5 +28,12 @@ describe('main()', () => {
         let expected = '1A0B';
         expect(result).toEqual(expected)
     });
+
+    it('should return 0A1B when user input matches one digit but not in the right position', function() {
+        let input = '5671';
+        let result = main(answer, input);
+        let expected = '0A1B';
+        expect(result).toEqual(expected)
+    });
 });
 
