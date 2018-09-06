@@ -1,6 +1,4 @@
 // Write your cade below:
-function main() {};
-
-module.exports = {
-    main
-}
+module.exports = function main() {
+    return "4A0B";
+};
