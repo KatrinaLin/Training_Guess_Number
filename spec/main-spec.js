@@ -35,5 +35,19 @@ describe('main()', () => {
         let expected = '0A1B';
         expect(result).toEqual(expected)
     });
+
+    it('should return 3A0B when user input matches three digits of answer but not others', function() {
+        let input = '1237';
+        let result = main(answer, input);
+        let expected = '3A0B';
+        expect(result).toEqual(expected)
+    });
+
+    it('should return 0A4B when user input matches all digits of answer but not in the right position', function() {
+        let input = '4321';
+        let result = main(answer, input);
+        let expected = '0A4B';
+        expect(result).toEqual(expected)
+    });
 });
 
