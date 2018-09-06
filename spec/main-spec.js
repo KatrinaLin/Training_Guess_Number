@@ -12,15 +12,20 @@ describe('main()', () => {
         let input = '1234';
         let result = main(answer, input);
         let expected = '4A0B';
-
         expect(result).toEqual(expected)
     });
 
-    it('should return 0A4B when user input does not match answer at all', function() {
+    it('should return 0A0B when user input does not match answer at all', function() {
         let input = '5678';
         let result = main(answer, input);
         let expected = '0A0B';
+        expect(result).toEqual(expected)
+    });
 
+    it('should return 1A0B when user input matches one digit of answer but not others', function() {
+        let input = '1567';
+        let result = main(answer, input);
+        let expected = '1A0B';
         expect(result).toEqual(expected)
     });
 });
