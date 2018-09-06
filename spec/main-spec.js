@@ -1,6 +1,6 @@
 const main = require('../main/main');
 
-describe('main()', () => {
+describe('compare()', () => {
 
     var answer;
 
@@ -47,6 +47,20 @@ describe('main()', () => {
         let input = '4321';
         let result = main(answer, input);
         let expected = '0A4B';
+        expect(result).toEqual(expected)
+    });
+
+    it('should return 0A4B when user input matches all digits of answer but not in the right position', function() {
+        let input = '4321';
+        let result = main(answer, input);
+        let expected = '0A4B';
+        expect(result).toEqual(expected)
+    });
+
+    it('should return 1A0B when user input same number and matches one digits of answer', function() {
+        let input = '1111';
+        let result = main(answer, input);
+        let expected = '1A0B';
         expect(result).toEqual(expected)
     });
 });

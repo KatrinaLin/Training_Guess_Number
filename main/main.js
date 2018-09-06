@@ -1,8 +1,8 @@
-module.exports = function main(answer, input) {
+module.exports = function compare(answer, input) {
 
-    let count = input.split('').reduce((acc, cur, index) => {
-        if (answer.includes(cur)) {
-            if (index === answer.indexOf(cur)) {
+    let count = answer.split('').reduce((acc, cur, index) => {
+        if (input.includes(cur)) {
+            if (cur === input.charAt(index)) {
                 acc.A++;
             } else {
                 acc.B++;
@@ -14,3 +14,15 @@ module.exports = function main(answer, input) {
     return `${count.A}A${count.B}B`;
 };
 
+function generateAnswer() {
+    let answer = [];
+
+    while (answer.length < 4) {
+        let random = Math.floor(Math.random() * 10);
+        if (answer.includes(random)) {
+            continue;
+        }
+        answer.push(random);
+    }
+    return answer.join();
+}
